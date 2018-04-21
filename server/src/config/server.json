@@ -1,0 +1,21 @@
+{
+  "secret": "hakuna matata what a wonderful phrase",
+  "payloadLimit": "10mb",
+  "host": "localhost",
+  "port": 3002,
+  "name": "Fidelitas Asymmetric Cryptography Example",
+  "responseType" : "application/json",
+  "contentType" : "content-type",
+  "jwtPortal": 30,
+  "protocol": "http:",
+  "requireAuth": true,
+  "apiHostname": "127.0.0.1",
+  "apiPort": "3600",
+  "apiProtocol": "http:",
+  "redisHostname": "127.0.0.1",
+  "jsonType": "application/json"
+}
+
+
+
+

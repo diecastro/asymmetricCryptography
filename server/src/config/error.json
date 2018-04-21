@@ -1,0 +1,14 @@
+{
+  "notFound": "Apply Site: Not Found",
+  "noResponse": "No statements were found.",
+  "badRequest": "Bad Request",
+  "unauthorized": "Unauthorized",
+  "noUsername": "no username supplied",
+  "noCredentials": "credentials not supplied",
+  "unsuccessfulRequest": "Credentials incorrect. Please try again.",
+  "unsuccessfulSignIn": "Sorry, your username and/or password is incorrect. Please try again.",
+  "notImplemented": "Not Implemented.",
+  "validateTokenError": "Server Error: Validating Token",
+  "decryptingTokenError": "Server error decrypting token",
+  "noResponseError": "No Response"
+  }

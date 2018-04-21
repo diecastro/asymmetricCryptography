@@ -1,0 +1,28 @@
+{
+  "compact": false,
+  "presets":  [["es2015", { "modules": false }], "react"],
+  "env": {
+    "test": {
+      "presets":["es2015", "stage-0", "react"],
+      "plugins": [
+        "transform-es2015-modules-commonjs",
+        "dynamic-import-node",
+        "add-module-exports"
+      ],
+      "only": [
+        "./**/*.js",
+        "node_modules/jest-runtime"
+      ]
+    }
+  },
+  "plugins": [
+    "transform-object-rest-spread",
+    [
+      "transform-es2015-classes",
+      {
+        "loose": true
+      }
+    ]
+  ]
+}
+
