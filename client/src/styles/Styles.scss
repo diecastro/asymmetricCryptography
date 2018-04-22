@@ -1,0 +1,27 @@
+.logo{
+    background: url('../../dist/images/logo.png') no-repeat;
+    width: 200px;
+    height: 100px;
+    background-size: contain;
+}
+.header{
+    margin-right: 35px;
+}
+
+.rowForm {
+    padding: 30px;
+  }
+
+  .formInput {
+    font-family: $quaternaryFontFamily !important;
+    border: 0px;
+    outline: none;
+    padding-bottom: 3px;
+    width: 100%;
+    height: 30px;
+  }
+  
+  .formLabel {
+    font-family: $quaternaryFontFamily !important;
+    z-index: 1;
+  }
