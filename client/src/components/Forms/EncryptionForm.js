@@ -47,7 +47,7 @@ class EncryptionForm extends Component {
     return (
         <form onSubmit={handleSubmit}>
           <div className={`row ${styles.rowForm}`}>
-            <div className='col-md-6 no-padding'>
+            <div className='col-md-12 no-padding'>
               <Field
                 label='Texto a encriptar'
                 type='text'
@@ -56,15 +56,17 @@ class EncryptionForm extends Component {
                 name='plainText'
               />
             </div>
-            <div className='col-md-6 no-padding'>
+            </div>
+            <div className={`row ${styles.rowForm}`}>
+            <div className='col-md-12 no-padding'>
               <Field
-                label='Texto Encriptado'
+                label='Llave Publica'
+                type='text'
                 component={renderTextField}
                 fullWidth={true}
-                name='encryptedText'
-                type='text'
-                disabled={true}
+                name='publicKey'
               />
+              
             </div>
             </div>
         </form>
@@ -78,7 +80,7 @@ EncryptionForm = reduxForm({
   validate,
   fields: [
     'plainText',
-    'encryptedText',
+    'publicKey'
   ],
   enableReinitialize: true
 })(EncryptionForm);
@@ -87,7 +89,7 @@ function mapStateToProps(state, ownProps) {
 
   let initialValues = {};
   initialValues.plainText = null;
-  initialValues.encryptedText = null;
+  initialValues.publicKey = null;
   return {
     initialValues: initialValues,
   }

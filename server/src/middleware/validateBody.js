@@ -12,10 +12,9 @@ const decryptBody = function (req) {
   return new Promise(function (resolve, reject) {
       try {
 
-        const requestBody = Object.keys(req.body)[0];
-        const textToDecrypt = requestBody.replace(/ /g, '+');
+        const requestBody = JSON.parse(req.body.payload);
+        const textToDecrypt = requestBody.encryptedText.replace(/ /g, '+');
         const sitePrivateKey = fs.readFileSync(path.resolve(__dirname,('./../keys/private.key')), 'utf8');
-
         req.body.payload = jsdecrypt.dec(sitePrivateKey, textToDecrypt);
         resolve(req);
       } catch (e) {

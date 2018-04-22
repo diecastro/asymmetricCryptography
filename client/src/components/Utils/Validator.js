@@ -15,6 +15,23 @@ const Validator = {
     
         const requiredFields = [
           'plainText',
+          'publicKey'
+        ];
+        _.map(requiredFields, (field) => {
+          if (this.hasNoValue(values[field])) {
+            errors[field] = that.messages.requiredText;
+          }
+        });
+    
+        return errors;
+      },
+      validateDecryptionForm: function (values){
+        let errors = {};
+        let that = this;
+    
+        const requiredFields = [
+          'publicKey',
+          'encryptedText'
         ];
         _.map(requiredFields, (field) => {
           if (this.hasNoValue(values[field])) {

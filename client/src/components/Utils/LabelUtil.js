@@ -11,7 +11,7 @@ const LabelUtil = {
           '200': '#90caf9',
           '300': '#64b5f6',
           '400': '#42a5f5',
-          '500': '#FD7C24',
+          '500': '#05327c',
           '600': '#1e88e5',
           '700': '#1976d2',
           '800': '#1565c0',
@@ -19,11 +19,11 @@ const LabelUtil = {
           A100: '#82b1ff',
           A200: '#448aff',
           A400: '#2979ff',
-          A700: '#FD7C24',
+          A700: '#05327c',
           contrastDefaultColor: 'light',
         },
         button: {
-          backgroundColor: '#FD7C24',
+          backgroundColor: '#05327c',
         }
       })
     });

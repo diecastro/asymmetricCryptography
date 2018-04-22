@@ -11,7 +11,6 @@ function callApi(endpoint, method, authenticated, body, encrypted) {
 
   const encrypt = new JSEncrypt();
   let token = localStorage.getItem('token') || null;
-
   body = typeof body === 'object' ? JSON.stringify(body) : body;
 
   let config = {
@@ -19,7 +18,6 @@ function callApi(endpoint, method, authenticated, body, encrypted) {
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/x-www-form-urlencoded',
-      'agentId': globalAgentId,
       'authorization' : `Bearer ${token}`
     },
   };
@@ -27,8 +25,12 @@ function callApi(endpoint, method, authenticated, body, encrypted) {
   if (method !== 'GET') {
 
     if (encrypted) {
-      encrypt.setPublicKey(siteKey);
-      let encryptedPayload = encrypt.encrypt(body);
+      let newBody = JSON.parse(body);
+      let key = newBody.publicKey;
+      delete newBody.publicKey;
+      encrypt.setPublicKey(key);
+      // encrypt.setPublicKey(siteKey);
+      let encryptedPayload = encrypt.encrypt(JSON.stringify(newBody));
       config.body = encodeURI(encryptedPayload);
     } else {
       config.body = body ? serialize({payload: body}) : null;
